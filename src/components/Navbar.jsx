@@ -78,7 +78,7 @@ const Navbar = () => {
           {/* Menu Section */}
           <div
             className={`gap-7 w-full absolute z-0 lg:bg-transparent md:text-black md:bg-white lg:text-white bg-[#FCEDCB] text-black ${
-              isOpen ? "top-[100%] duration-300" : "top-[-900%] duration-500"
+              isOpen ? "top-[100%] duration-500" : "top-[-900%] duration-700"
             } lg:static lg:w-[65%] lg:items-center flex-nowrap lg:p-2 flex md:flex-col flex-col-reverse lg:flex-row justify-center lg:justify-end`}
           >
             <button className="p-3 hover:bg-[#253841] hover:text-[#FDEECB] lg:bg-[#FDEECB] lg:hover:bg-[#FDEECB] lg:hover:text-black flex items-start m-0 md:hidden lg:block text-black text-sm font-semibold lg:pt-[0.6rem] lg:pb-[0.9rem] lg:px-6 lg:rounded">
