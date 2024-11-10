@@ -38,20 +38,39 @@ const Navbar = () => {
                 onClick={() => setIsOpen(!isOpen)}
                 className="lg:hidden text-black bg-[#FCEDCB] sm:rounded-md p-2 mr-1 focus:outline-none"
               >
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
+                {isOpen ? (
+                  // Close icon (X) with transition
+                  <svg
+                    className="w-6 h-6 transition duration-300 transform rotate-180"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                ) : (
+                  // Hamburger icon with transition
+                  <svg
+                    className="w-6 h-6 transition duration-300 transform rotate-0"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
+                  </svg>
+                )}
               </button>
             </div>
           </div>
@@ -59,7 +78,7 @@ const Navbar = () => {
           {/* Menu Section */}
           <div
             className={`gap-7 w-full absolute z-0 lg:bg-transparent md:text-black md:bg-white lg:text-white bg-[#FCEDCB] text-black ${
-              isOpen ? "top-[100%] duration-1000" : "top-[-900%] duration-1000"
+              isOpen ? "top-[100%] duration-300" : "top-[-900%] duration-500"
             } lg:static lg:w-[65%] lg:items-center flex-nowrap lg:p-2 flex md:flex-col flex-col-reverse lg:flex-row justify-center lg:justify-end`}
           >
             <button className="p-3 hover:bg-[#253841] hover:text-[#FDEECB] lg:bg-[#FDEECB] lg:hover:bg-[#FDEECB] lg:hover:text-black flex items-start m-0 md:hidden lg:block text-black text-sm font-semibold lg:pt-[0.6rem] lg:pb-[0.9rem] lg:px-6 lg:rounded">
