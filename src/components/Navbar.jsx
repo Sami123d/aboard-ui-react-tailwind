@@ -65,7 +65,7 @@ const Navbar = () => {
             <button className="p-3 hover:bg-[#253841] hover:text-[#FDEECB] lg:bg-[#FDEECB] lg:hover:bg-[#FDEECB] lg:hover:text-black flex items-start m-0 md:hidden lg:block text-black text-sm font-semibold lg:pt-[0.6rem] lg:pb-[0.9rem] lg:px-6 lg:rounded">
               Login
             </button>
-            <ul className="lg:w-[80%] flex lg:items-center flex-col flex-wrap lg:flex-row lg:justify-end md:justify-between gap-7">
+            <ul className="lg:w-[80%] flex lg:items-center flex-col flex-wrap lg:flex-row lg:justify-end md:justify-between gap-1 md:gap-7">
               {menuItems.map((item) => (
                 <li
                   key={item}
