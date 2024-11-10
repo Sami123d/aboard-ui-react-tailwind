@@ -3,7 +3,8 @@
 @tailwind utilities;
 
   
-/* Custom styles to ensure scrolling works */
+/* Custom styles to
+ ensure scrolling works */
 .menu-container {
     position: fixed;  /* Keeps the menu fixed on the screen */
     top: 0;
