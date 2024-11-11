@@ -19,7 +19,7 @@ const App = () => {
     return () => {
       window.removeEventListener("resize", adjustPadding);
     };
-  }, []);
+  });
   return (
     <div className=" secondary-background ">
       <Navbar />
