@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Navbar from "./components/Navbar";
-import "./app.css";
+import "./App.css";
 import Hero from "./components/Hero";
 const App = () => {
   useEffect(() => {
@@ -24,7 +24,6 @@ const App = () => {
     <div className=" secondary-background ">
       <Navbar />
       <Hero />
-      lorem
     </div>
   );
 };
