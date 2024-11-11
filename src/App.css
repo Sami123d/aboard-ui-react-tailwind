@@ -1,49 +1,86 @@
-
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 :root {
-    --menu-height: 0px;
-  }
-  
-  .menu {
-    max-height: var(--menu-height);
-    overflow: auto;
-    transition: max-height 0.3s ease;
-  }
-  
-  /* Optional: Add styles for open menu */
-  .menu.open {
-    max-height: var(--menu-height);
-  }
-  
+  --e-global-color-primary: #3a373d;
+  --e-global-color-secondary: #fcd580;
+  --e-global-color-text: #3a373d;
+  --e-global-color-accent: #1f202e;
+  --e-global-color-a52ff54: #ffffff;
+  --e-global-color-2b5e867: #253841;
+  --e-global-color-1c0e1ad: #000000;
+  --e-global-typography-primary-font-family: "Libre Baskerville";
+  --e-global-typography-primary-font-weight: 600;
+  --e-global-typography-secondary-font-family: "Inter";
+  --e-global-typography-secondary-font-size: 16px;
+  --e-global-typography-secondary-font-weight: 400;
+  --e-global-typography-text-font-family: "Roboto";
+  --e-global-typography-text-font-weight: 400;
+  --e-global-typography-accent-font-family: "Roboto";
+  --e-global-typography-accent-font-weight: 500;
+  --menu-height: 0px;
+}
+.secondary-background{
+  background-color: var(--e-global-color-secondary);
+}
+.primary-background {
+  background-color: var(--e-global-color-primary);
+}
+
+.primary-color {
+  color: var(--e-global-color-primary);
+}
+
+.primary-text {
+  font-family: var(--e-global-typography-primary-font-family);
+  font-weight: var(--e-global-typography-primary-font-weight);
+}
+/* NAV SECTION START */
+/* NAV SECTION START */ /* NAV SECTION START */
+.menu {
+  max-height: var(--menu-height);
+  overflow: auto;
+  transition: max-height 0.3s ease;
+}
+
+/* Optional: Add styles for open menu */
+.menu.open {
+  max-height: var(--menu-height);
+}
+
 /* Custom styles to
  ensure scrolling works */
- .menu-container {
-    position: fixed;  /* Keeps the menu fixed on the screen */
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;  /* Full height */
-    max-height: 100vh; /* Maximum height of the viewport */
-    overflow-y: auto;  /* Allows scrolling if the content overflows */
-    z-index: 1000;  /* Make sure it’s on top */
-  }
-  body.menu-open {
-    overflow: scroll
-  }
-  
-  /* For mobile menu - menu items */
+.menu-container {
+  position: fixed; /* Keeps the menu fixed on the screen */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; /* Full height */
+  max-height: 100vh; /* Maximum height of the viewport */
+  overflow-y: auto; /* Allows scrolling if the content overflows */
+  z-index: 1000; /* Make sure it’s on top */
+}
+body.menu-open {
+  overflow: scroll;
+}
+
+/* For mobile menu - menu items */
+.menu-items {
+  display: flex;
+  flex-direction: column; /* Stacking items vertically */
+  gap: 1rem;
+  padding: 2rem;
+  background-color: #fdeecb;
+  height: 100%;
+  overflow-y: auto; /* Allow scrolling if menu items overflow */
+}
+
+@media (max-width: 768px) {
   .menu-items {
-    display: flex;
-    flex-direction: column;  /* Stacking items vertically */
-    gap: 1rem;
-    padding: 2rem;
-    background-color: #FDEECB;
-    height: 100%;
-    overflow-y: auto;  /* Allow scrolling if menu items overflow */
+    padding: 1rem;
   }
-  
-  @media (max-width: 768px) {
-    .menu-items {
-      padding: 1rem;
-    }
-  }
-  
+}
+/* NAV END */

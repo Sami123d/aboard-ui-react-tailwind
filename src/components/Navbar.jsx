@@ -40,7 +40,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="w-full fixed text-[#FCEDCB] bg-[#253841]">
+    <div className="w-full fixed navbar text-[#FCEDCB] bg-[#253841] ">
       <div className="max-w-[1440px] mx-auto">
         <div className="relative flex flex-col lg:flex-row">
           {/* Logo Section */}
