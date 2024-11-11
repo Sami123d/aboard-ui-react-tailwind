@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../assets/logo.webp";
+import "../App.css"; // Assuming your CSS is in App.css
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,8 +16,27 @@ const Navbar = () => {
     "Become a Partner",
   ];
 
+  useEffect(() => {
+    const updateMenuHeight = () => {
+      const maxHeight = window.innerHeight * 0.8; // 80% of the viewport height
+      document.documentElement.style.setProperty('--menu-height', `${maxHeight}px`);
+    };
+
+    // Update menu height on page load
+    updateMenuHeight();
+
+    // Update menu height on window resize
+    window.addEventListener('resize', updateMenuHeight);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', updateMenuHeight);
+    };
+  }, []);
+
   const handleLinkClick = (item) => {
     setActiveLink(item);
+    setIsOpen(false); // Close the menu after clicking a link
   };
 
   return (
@@ -77,8 +97,8 @@ const Navbar = () => {
 
           {/* Menu Section */}
           <div
-            className={`gap-7 w-full absolute z-0 lg:bg-transparent md:text-black md:bg-white lg:text-white bg-[#FCEDCB] text-black ${
-              isOpen ? "top-[100%] duration-500" : "top-[-900%] duration-700"
+            className={`menu gap-7 w-full absolute z-0 lg:bg-transparent md:text-black md:bg-white lg:text-white bg-[#FCEDCB] text-black ${
+              isOpen ? "top-[100%] duration-500 open" : "top-[-900%] duration-700"
             } lg:static lg:w-[65%] lg:items-center flex-nowrap lg:p-2 flex md:flex-col flex-col-reverse lg:flex-row justify-center lg:justify-end`}
           >
             <button className="p-3 hover:bg-[#253841] hover:text-[#FDEECB] lg:bg-[#FDEECB] lg:hover:bg-[#FDEECB] lg:hover:text-black flex items-start m-0 md:hidden lg:block text-black text-sm font-semibold lg:pt-[0.6rem] lg:pb-[0.9rem] lg:px-6 lg:rounded">
